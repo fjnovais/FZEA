@@ -3,7 +3,6 @@
 To redirect standard output to a file, the ">" character is used.
 If you want the new results to be appended to an existed file instead, use ">>"
 
-
 #####AWK
 
 ```
@@ -536,6 +535,10 @@ tar -xvf nome_arquivo_compactad               #uncompress .tar
 
 ```
 top                                            #show analyses that are running
+```
+
+```
+transpose  –t --fsep “\t”-l 698741x45 file > new file                 #transpose a file
 ```
 
 ```
