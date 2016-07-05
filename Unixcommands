@@ -1,4 +1,4 @@
-###Unix Codes- created by Gerson Oliveira Junior/ modify by Francisco José de Novais
+###Unix Codes- created by Gerson Oliveira Junior/ modified by Francisco José de Novais
 
 To redirect standard output to a file, the ">" character is used.
 If you want the new results to be appended to an existed file instead, use ">>"
