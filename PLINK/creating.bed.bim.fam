@@ -1,0 +1,4 @@
+#creating .bed .bim .fam from .map .bed to PLINK
+
+./plink --cow --noweb --nonfounders --file $VAL --no-parents --no-fid --no-sex --no-pheno --make-bed --out $VAL
+
