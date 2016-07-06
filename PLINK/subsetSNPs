@@ -1,0 +1,3 @@
+#Subset of SNPs (file subsetmap.txt {2 columns with subset SNPs list}, files plink)
+
+./plink --cow --noweb --nonfounders --bfile $REF --no-parents --no-fid --no-sex --no-pheno --extract subsetsnp.txt --make-bed --out $REF
