@@ -1,0 +1,47 @@
+#creating .ped .map files to PLINK
+
+nano genochange.sh
+----------------------------------------------------------------------------------
+geno=$1
+map=$2
+outgeno=$3
+
+
+cat $geno | awk '{print $1}' > ids.txt
+
+cat $geno | awk '{print $2}' |
+awk 'BEGIN {FS="";OFS=" "} {$1=$1; print }' |
+./change012to111222.awk | paste -d" " ids.txt - > ${outgeno}.ped
+
+cat $map | awk '{print $1,$2,0,$3}' > ${outgeno}.map
+
+rm ids.txt
+------------------------------------------------------------------------------------
+
+
+nano change012to111222.awk
+------------------------------------------------------------------------------------
+#!/usr/bin/gawk -f
+###########################################
+######  Recode allele dosage 0-2 ##########
+######         to                ##########
+######    Alleles 11,12,22       ##########
+###########################################
+
+BEGIN {FS="";OFS=""}
+{
+for (i=1;i<=NF;i++)
+{
+if($i=="0") $i="1 1";
+else if($i=="1") $i="1 2";
+else if($i=="2") $i="2 2";
+else if($i=="5") $i="0 0"
+}
+print
+}
+-------------------------------------------------------------------------------------
+
+chmod +x change012to111222.awk
+chmod +x genochange.sh
+./genochange.sh geno.txt map.txt outputname.txt
+
