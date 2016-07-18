@@ -1,0 +1,18 @@
+# R Code to create Manhattan plots - H. Wang (Joy)
+yyy<-read.table("chrsnp")
+zzz=yyy[ which(yyy$V1==1 & yyy$V2==2), ]
+n=nrow(zzz)
+y=zzz[,4]
+x<-zzz[,3]
+chr1=zzz[,5]
+chr<-NULL
+for (i in 1:length(chr1)) {
+  if (chr1[i]%%4==0) {chr[i]="darkgoldenrod"}
+  if (chr1[i]%%4==1) {chr[i]="darkorchid"}
+  if (chr1[i]%%4==2) {chr[i]="blue"}
+  if (chr1[i]%%4==3) {chr[i]="forestgreen"}
+}
+png(file="Vft1e2_manplot.png",family="sans",height=2000,width=3600,pointsize=20,bg="white",type="cairo",units="px")
+par(mfrow=c(1,1),family="sans",cex=1.5,font=2)
+plot(y,x,main="Manhattan Plot SNP ",xlab="",ylab="",pch=20,xlim=c(1,n),ylim=c(0,max(x)),col=chr)
+dev.off()
