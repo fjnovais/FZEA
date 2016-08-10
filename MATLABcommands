@@ -12,6 +12,12 @@
 ```
 help command-name           #command-name function is shown in the command window
 doc command-name            #new window contain command-name function is shown
+lookfor command-name        #list of command-name related is shown
+```
+
+```
+pause (n)                   #stop temporarily for n second(s) a command 
+whos                        #lists active variables and their sizes for debugging
 ```
 
 ```
