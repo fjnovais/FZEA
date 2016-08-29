@@ -21,10 +21,37 @@ lookfor command-name        #list of command-name related is shown
 ```
 pause (n)                   #stop temporarily for n second(s) a command 
 whos                        #lists active variables and their sizes for debugging
-close all                   # close all figure windows
-clear                       #clear all variables from memory
 format short                #the default: 5 digits
 format long                 #15 digits of accuracy
+abs(x)                      #the absolute value of a number (real or complex)
+clc                         #clears the command window; useful for beautifying printed output
+clear                       #clear all variables from memory
+close all                   #closes all figure windows
+close 3                     #closes figure window 3
+ceil(x)                     #the nearest integer to x looking toward +1
+round(x)                    #the nearest integer to x
+fix(x)                      #the nearest integer to x looking toward zero
+floor(x)                    #the nearest integer to x looking toward -1
+fliplr(A)                   #flip a matrix A, left for right
+flipud(A)                   #flip a matrix A, up for down
+rot90(A)                    #rotate a matrix A by 90
+length(a)                   #the number of elements in a vector
+mod(x,y)                    #the integer remainder of x/y; see online help if x or y are negative
+rem(x,y)                    #the integer remainder of x/y; see online help if x or y are negative
+sign(x)                     #the sign of x and returns 0 if x=0
+size(c)                     #the dimensions of a matrix
+```
+
+```
+cos(x) sin(x) tan(x) sec(x) csc(x) cot(x)
+acos(x) asin(x) atan(x) atan2(y,x)
+exp(x) log(x) [log(x) is ln(x)] log10(x) log2(x) sqrt(x)
+cosh(x) sinh(x) tanh(x) sech(x) csch(x) coth(x)
+acosh(x) asinh(x) atanh(x)
+sign(x) airy(n,x) besselh(n,x) besseli(n,x) besselj(n,x) besselk(n,x)
+bessely(n,x) beta(x,y) betainc(x,y,z) betaln(x,y) ellipj(x,m) ellipke(x)
+erf(x) erfc(x) erfcx(x) erfinv(x) gamma(x) gammainc(x,a)
+gammaln (x) expint(x) legendre(n,x) factorial(x)      #Mathematical functions
 ```
 
 ```
@@ -45,9 +72,26 @@ a (1:3)                     #position on matrix (ROW;COLUMN)
 a (1:2,3)                   #position on matrix (ROW TO ROW;COLUMN)
 a (3, end)                  #last element of row 3
 size (N)                    #size of matrix N
+.* OR ./ OR .^              #math operation of corresponding elements together (in plot its useful)
 ```
 
 ```
-
+N= input (' Enter a value of N - ')   #create a matrix, string,array or a data frame
+fprintf(' N =%g \n',500)              #print 500
+fprintf(' x =%1.15g \n',pi)           #print pi with 15 decimal places
+fprintf(' x =%1.10e \n',400)          #print 4x10^2
+fprintf(' x =%6.2f \n',pi)            #print pi with 2 decimal places and 6 places on result
+fprintf(' x =%12.8f y =%12.8f \n',5,exp(5))  #print x and y
+fid= fopen('example3.8a.txt','w')     #write a file called example3.8a.txt ## fid or any variable is OK
+fclose(fid);                          #end of writing file
+plot(x,y,'-r');                       #"-r" means line color/red for example
+xlabel('\theta')                      #x label
+ylabel('F(\theta)')                   #y label
+title ('F(\theta)=sin(5 \theta)')     # graphic's title
+figure                                #generating multiple plots
+plot(x,y,'r-',x,y2,'b-')              #same plot two variables  
+plot3(x,y,z,'b-')                     #plot the spiral
+axis([0 25 -6 5])                     #x= 0//25 y= -6//5
+```
 
 
