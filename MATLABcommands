@@ -23,6 +23,7 @@ pause (n)                   #stop temporarily for n second(s) a command
 whos                        #lists active variables and their sizes for debugging
 format short                #the default: 5 digits
 format long                 #15 digits of accuracy
+format rat                  #fraction result
 abs(x)                      #the absolute value of a number (real or complex)
 clc                         #clears the command window; useful for beautifying printed output
 clear                       #clear all variables from memory
@@ -73,6 +74,7 @@ a (1:2,3)                   #position on matrix (ROW TO ROW;COLUMN)
 a (3, end)                  #last element of row 3
 size (N)                    #size of matrix N
 .* OR ./ OR .^              #math operation of corresponding elements together (in plot its useful)
+dot(a,b)                    #multiplication a*b matrix
 ```
 
 ```
@@ -92,6 +94,22 @@ figure                                #generating multiple plots
 plot(x,y,'r-',x,y2,'b-')              #same plot two variables  
 plot3(x,y,z,'b-')                     #plot the spiral
 axis([0 25 -6 5])                     #x= 0//25 y= -6//5
+text (10,.5,'Hi');                    #put 'Hi' at x=10 and y=0.5 in plot
+```
+
+```
+\alpha \beta \gamma \delta \epsilon \phi\theta \kappa \lambda \mu \nu \pi \rho \sigma \tau \xi \zeta    #greek letters for titles  
+\Gamma                              #Capital letter                                
+\theta_{12}                         #makes theta with 12 (bottom)
+\theta^{12}                         #makes theta with 12 (up)
+```
+[X,Y]=meshgrid(x,y);
+[X,Y]=meshgrid(x,y);                #Use meshgrid (y colummns in lines) or ndgrid (x colummns in lines-BETTER) to convert 1-d arrays into 2-d matrices
+surf(X,Y,F)                         #surface graph
+contour(X,Y,F)                      
+quiver(X,Y,Ex,Ey)                   #makes field arrow plot
+```
+
 ```
 
 
