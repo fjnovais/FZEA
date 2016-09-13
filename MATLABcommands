@@ -75,6 +75,11 @@ a (3, end)                  #last element of row 3
 size (N)                    #size of matrix N
 .* OR ./ OR .^              #math operation of corresponding elements together (in plot its useful)
 dot(a,b)                    #multiplication a*b matrix
+zeros(N,M)                  #creates a N-by-M matrix of zeros
+ones(N,M)                   #creates a N-by-M matrix of ones
+eye (N)                     #creates an identidy matrix of dimention N
+rand(N,M)                   #creates a N-by-M matrix of random numbers in (0,1)
+diag(b)                     #creates a diagonal matrix with the elements of b
 ```
 
 ```
@@ -108,6 +113,7 @@ text (10,.5,'Hi');                    #put 'Hi' at x=10 and y=0.5 in plot
 surf(X,Y,F)                         #surface graph
 contour(X,Y,F)                      
 quiver(X,Y,Ex,Ey)                   #makes field arrow plot
+f=inline ()                           #Do any function
 ```
 
 ```
