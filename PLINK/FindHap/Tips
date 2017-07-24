@@ -1,0 +1,20 @@
+#####How to check the position of some specific haplotype allele
+```bash
+awk '{if($4=="5" && $6=="157") print}' hap.list | head                    #look the $7 and copy this number
+grep 15320 chromosome.data     #This is the first SNP of the Hap allele 157
+```
+
+```bash
+awk '{if($4=="5" && $6=="158") print}' hap.list | head                    #look the $7 and copy this number-1
+grep 15418 chromosome.data   #This is the last SNP of the Hap allele 157 
+```
+
+
+#####How to check the frequency of some haplotype allele
+
+```bash
+awk '{if($4=="14" && $3=="576" && $6=="390") print}' hap.list              #In this case I'm looking chr=14, haplotype=390, copy=576
+```
+
+#####Looking for Phased Data
+```If you choose the hapout = 1 option then haplotypes.txt will contain the phased haplotypes with 2 bytes / SNP, coded 1 for first allele and 2 for second. The hap.list also contains the haplotypes within each segment. The codes there are 0 for first allele and 2 for second, with 1 reserved for unphased or missing. In both cases the alleles are in the same order as the original genotypes.```
