@@ -1,0 +1,15 @@
+Examples:
+./converttogeno.sh heifers_m.common48 heifers_m.common48            #convert plink to FImpute    #original: ~/1_Gift/6_Imputing/1_Paternidade/48sires
+
+./make_geno_FImp.sh bulls.geno heifers_m.common48.geno genobullsheifers_FImpute     #files .geno are output of converttogeno.sh (biallecic with space)  #original: ~/1_Gift/6_Imputing/1_Paternidade/48sires 
+
+
+
+./FIminor.sh ../../2_QC_Preg/PREP_FILES/PLINK/48sires/heifers_finalFImp REF heiferbullsnogeno_ped0.01 plink ../1_Paternidade/48sires/ped48_corrigido_0.01
+#original: ~/1_Gift/6_Imputing/48_sires
+#input = plink
+ref=$1
+outref=$2
+finaloutfile=$3
+outformat=$4
+Pedigree=$5
