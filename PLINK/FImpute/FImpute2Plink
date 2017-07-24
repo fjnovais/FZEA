@@ -1,0 +1,13 @@
+geno=$1
+map=$2
+out=$3
+
+cat $geno | awk '{print $1}' > ids.txt
+
+cat $genohd | awk '{print $3}' |
+awk 'BEGIN {FS="";OFS=" "} {$1=$1; print }' |
+./change012to111222.awk | paste -d" " ids.txt - > ${out}.ped
+
+cat $map | awk '{print $2,$1,0,$3}' > ${out}.map 
+
+rm ids.txt
